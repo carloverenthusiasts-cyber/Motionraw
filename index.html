@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionRaw | Extreme AR Vibes Assets</title>
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #38bdf8;
+            --yt-red: #ff0000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: #05070a;
+            color: white;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(11, 15, 26, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-size: 22px; font-weight: 900; color: var(--accent); text-decoration: none; letter-spacing: -1px; }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 5% 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, #05070a 100%);
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; letter-spacing: -2px; }
+        .hero p { color: #8b949e; font-size: 1.1rem; margin-bottom: 40px; }
+
+        /* SEPARATE SEARCH BOX */
+        .search-wrapper { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            max-width: 800px; 
+            margin: 30px auto; 
+            padding: 0 20px;
+        }
+        .search-bar { 
+            flex: 1; 
+            background: var(--glass); 
+            border: 1px solid var(--glass-border); 
+            padding: 15px 25px; 
+            color: white; 
+            border-radius: 15px; 
+            outline: none;
+            backdrop-filter: blur(10px);
+        }
+        .search-btn { 
+            background: var(--accent); 
+            color: black; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 15px; 
+            font-weight: 800; 
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        /* CATEGORY TABS */
+        .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { 
+            background: var(--glass); 
+            border: 1px solid var(--glass-border); 
+            padding: 10px 25px; 
+            border-radius: 30px; 
+            color: #8b949e; 
+            cursor: pointer; 
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .tab-btn:hover, .tab-btn.active { background: var(--accent); color: black; border-color: var(--accent); }
+
+        /* GRID CONTAINER */
+        .container { 
+            padding: 20px 5% 80px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            min-height: 100vh;
+        }
+        .card { 
+            background: var(--glass); 
+            backdrop-filter: blur(15px); 
+            border-radius: 24px; 
+            border: 1px solid var(--glass-border); 
+            overflow: hidden; 
+            transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .card:hover { transform: translateY(-12px); border-color: var(--accent); }
+        .asset-box { height: 220px; background: #000; position: relative; overflow: hidden; }
+        video, img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .card:hover video, .card:hover img { transform: scale(1.1); }
+        
+        .info { padding: 25px; }
+        .dl-btn { 
+            display: block; text-align: center; background: #238636; color: white; 
+            padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; 
+            transition: 0.3s;
+        }
+        .dl-btn:hover { background: #2ea043; box-shadow: 0 0 20px rgba(46,160,67,0.4); }
+
+        /* SUBSCRIBE SECTION */
+        .social-section { padding: 100px 5%; text-align: center; background: #080b12; }
+        .social-card { 
+            max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.02); 
+            padding: 60px 30px; border-radius: 40px; border: 1px solid var(--glass-border); 
+        }
+        .yt-btn {
+            background: var(--yt-red); color: white; padding: 18px 45px; border-radius: 15px;
+            text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; 
+            gap: 15px; box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3); transition: 0.3s;
+        }
+        .yt-btn:hover { transform: scale(1.05); }
+
+        footer { padding: 50px; text-align: center; color: #333; border-top: 1px solid var(--glass-border); }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .search-wrapper { flex-direction: column; }
+            .search-btn { width: 100%; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">MOTIONRAW</a>
+        <div style="font-size: 12px; color: #8b949e; font-weight: 600;">@EXTREMEARVIBES</div>
+    </header>
+
+    <section class="hero">
+        <h1>Cinematic Library</h1>
+        <p>Premium RAW Footage, Assets & Music for Editors.</p>
+        
+        <div class="tabs">
+            <div class="tab-btn active">🎬 Videos</div>
+            <div class="tab-btn">🖼️ Images</div>
+            <div class="tab-btn">🎵 Music</div>
+        </div>
+
+        <div class="search-wrapper">
+            <input type="text" class="search-bar" placeholder="Search for Cars, Drone, Nature...">
+            <button class="search-btn">FIND ASSETS</button>
+        </div>
+    </section>
+
+    <div class="container" id="asset-grid">
+        <div class="card">
+            <div class="asset-box">
+                <video muted loop autoplay>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-fast-cars-in-a-city-at-night-1234-large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="info">
+                <h3>Night City Drift</h3>
+                <p>Type: Video • 4K RAW</p>
+                <a href="#" class="dl-btn">Download RAW</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="social-section">
+        <div class="social-card">
+            <h2 style="font-size: 32px; margin-bottom: 15px;">Subscribe the Channel</h2>
+            <p style="margin-bottom: 40px;">Get latest editing tips and vibes. Join the <b>Extreme AR Vibes</b> community.</p>
+            <a href="https://www.youtube.com/@extremearvibes" target="_blank" class="yt-btn">
+                <span style="font-size: 24px;">▶</span> SUBSCRIBE NOW
+            </a>
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/91आपका_नंबर" target="_blank" style="color:#25d366; text-decoration:none; font-weight:bold;">Contact WhatsApp Support →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Extreme AR Vibes | MotionRaw Asset Library
+    </footer>
+
+    <script>
+        // अपनी Google Sheet CSV URL यहाँ डालें
+        const sheetCSV = 'YOUR_CSV_URL_HERE';
+
+        async function fetchAssets() {
+            if (sheetCSV === 'YOUR_CSV_URL_HERE') return;
+            try {
+                const res = await fetch(sheetCSV);
+                const data = await res.text();
+                const rows = data.split('\n').slice(1);
+                const grid = document.getElementById('asset-grid');
+                grid.innerHTML = ''; 
+
+                rows.forEach(row => {
+                    const [title, cat, type, link] = row.split(',');
+                    if (!link) return;
+                    
+                    let media = type.trim() === 'Video' ? 
+                        `<video muted loop onmouseover="this.play()"><source src="${link}"></video>` :
+                        `<img src="${link}">`;
+                    
+                    grid.innerHTML += `
+                        <div class="card">
+                            <div class="asset-box">${media}</div>
+                            <div class="info">
+                                <h3>${title}</h3>
+                                <p>${cat} • ${type}</p>
+                                <a href="${link}" class="dl-btn" download>Download Asset</a>
+                            </div>
+                        </div>`;
+                });
+            } catch (err) { console.log("Sheet Error"); }
+        }
+        fetchAssets();
+    </script>
+
+</body>
+</html>
